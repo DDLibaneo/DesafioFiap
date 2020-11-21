@@ -1,0 +1,29 @@
+﻿@model DesafioFiap.Dtos.UsuarioNewsletterDtoIn
+
+@{
+    ViewBag.Title = "Form";
+}
+
+<h2>Newsletter</h2>
+
+@using (Html.BeginForm("Save", "UsuarioNewsletter"))
+{
+    @Html.ValidationSummary(true, "Conserte os seguintes erros: ")
+    <div class="form-group">
+        @Html.LabelFor(u => u.Nome)
+        @Html.TextBoxFor(u => u.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.Nome)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.Email)
+        @Html.TextBoxFor(u => u.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.Email)
+    </div>
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Assinar</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

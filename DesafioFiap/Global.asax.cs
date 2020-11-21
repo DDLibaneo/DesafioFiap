@@ -1,3 +1,5 @@
+using AutoMapper;
+using DesafioFiap.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace DesafioFiap
     {
         protected void Application_Start()
         {
+            Mapper.Initialize(m => m.AddProfile<MappingProfile>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
