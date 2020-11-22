@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace DesafioFiap.Controllers.Api
 {
+    [Authorize]
     public class UsuarioNewsletterController : ApiController
     {
         private readonly ApplicationDbContext _context;
@@ -77,7 +78,7 @@ namespace DesafioFiap.Controllers.Api
         }
 
         // DELETE /api/UsuarioNewsletter/1
-        [HttpDelete]
+        [HttpDelete]        
         public IHttpActionResult DeleteUsuario(int id)
         {
             var usuario = _context.UsuariosNewsletter.SingleOrDefault(u => u.Id == id);
