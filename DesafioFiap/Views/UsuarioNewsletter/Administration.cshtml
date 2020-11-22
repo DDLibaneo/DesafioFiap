@@ -4,29 +4,14 @@
     ViewBag.Title = "Administration";
 }
 
-<h2>Administration</h2>
+<h2>Administração da Newsletter</h2>
 
-@if (!Model.Any())
-{
-    <p>Ninguem está escrito na Newsletter no momento.</p>
-}
-else
-{
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var usuario in Model)
-            {
-                <tr>
-                    <td>@usuario.Nome</td>
-                    <td>@usuario.Email</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>

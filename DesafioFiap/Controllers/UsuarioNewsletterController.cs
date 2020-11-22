@@ -12,7 +12,7 @@ namespace DesafioFiap.Controllers
 {
     public class UsuarioNewsletterController : Controller
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public UsuarioNewsletterController()
         {
