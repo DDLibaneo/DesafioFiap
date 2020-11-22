@@ -19,9 +19,31 @@
 
 @section scripts
 {
-    <script>
-        $(document).ready(function () {
-            var table = $("#usuarios").
+<script>
+    $(document).ready(function () {
+        var table = $("#usuarios").DataTable({
+            ajax: {
+                url: "/api/UsuarioNewsletter",
+                dataSrc: ""
+            },
+            columns: [
+                {
+                    data: "Nome",
+                    //render: function (data, type, usuario) {
+                    //    return usuario.Nome;
+                    //}
+                },
+                {
+                    data: "Email"
+                },
+                {
+                    data: "Id",
+                    render: function (data) {
+                        return "<button class='btn-link js-delete' usuario-id=" + data + ">Deletar</button>"; 
+                    }
+                }
+            ]
         });
-    </script>
+    });
+</script>
 }
