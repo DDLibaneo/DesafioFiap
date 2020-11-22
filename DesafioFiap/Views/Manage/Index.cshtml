@@ -10,9 +10,8 @@
     <h4>Configurações da conta</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
-        <dd>
-            [
+        <dt>Senha:</dt>
+        <dd>            
             @if (Model.HasPassword)
             {
                 @Html.ActionLink("Trocar senha", "ChangePassword")
@@ -20,9 +19,7 @@
             else
             {
                 @Html.ActionLink("Criar", "SetPassword")
-            }
-            ]
+            }            
         </dd>
-        <dt>External Logins:</dt>
     </dl>
 </div>
