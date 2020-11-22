@@ -35,6 +35,7 @@ namespace DesafioFiap.Controllers
             return View("Form");
         }
 
+        [Authorize]
         public ActionResult Administration()
         {
             return View("Administration");

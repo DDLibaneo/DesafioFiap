@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -16,13 +18,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>                
+                </button>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>                    
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Assinar Newsletter", "New", "UsuarioNewsletter")</li>
-                    <li>@Html.ActionLink("Admin Newsletter", "Administration", "UsuarioNewsletter")</li> 
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Administração Newsletter", "Administration", "UsuarioNewsletter")</li>
+                        <li>@Html.ActionLink("Novo Admin", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
