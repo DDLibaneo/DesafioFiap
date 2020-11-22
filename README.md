@@ -22,4 +22,9 @@ Alternativamente, você pode rodar o script gerado pelo Entity Framework que est
 Rode o projeto DesafioFiap clicando no botão Run do Visual Studio. 
 
 ##### 4. Autenticação
-Para utilizar a funcionalidade de 
+Para acessar a tela de Administração da Newsletter é necessario fazer login. Use o seguinte usuario admin padrão:
+- User: admin@gmail.com
+- Senha: 1234567aA!
+
+##### 5. Utilizando as funcionalidades
+Todas funcionalidades estão no menu no topo da tela. As funcionalidades "Administração Newsletter" e "Novo Admin" exigem um usuario logado para ser utilizada.
