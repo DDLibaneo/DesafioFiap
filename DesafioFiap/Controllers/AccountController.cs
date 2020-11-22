@@ -145,9 +145,7 @@ namespace DesafioFiap.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-
-                    return RedirectToAction("Index", "Home");
+                    return View("AdminCreated", model);
                 }
                 AddErrors(result);
             }
