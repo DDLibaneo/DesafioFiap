@@ -20,46 +20,43 @@
 @section scripts
 {
 <script>
-    $(document).ready(function () {
-        var table = $("#usuarios").DataTable({
-            ajax: {
-                url: "/api/UsuarioNewsletter",
-                dataSrc: ""
+$(document).ready(function () {
+    var table = $("#usuarios").DataTable({
+        ajax: {
+            url: "/api/UsuarioNewsletter",
+            dataSrc: ""
+        },
+        columns: [
+            {
+                data: "Nome",
             },
-            columns: [
-                {
-                    data: "Nome",
-                    //render: function (data, type, usuario) {
-                    //    return usuario.Nome;
-                    //}
-                },
-                {
-                    data: "Email"
-                },
-                {
-                    data: "Id",
-                    render: function (data) {
-                        return "<button class='btn-link js-delete' usuario-id=" + data + ">Deletar</button>"; 
-                    }
+            {
+                data: "Email"
+            },
+            {
+                data: "Id",
+                render: function (data) {
+                    return "<button class='btn-link js-delete' usuario-id=" + data + ">Deletar</button>"; 
                 }
-            ]
-        });
-    });
+            }
+        ]
+    });  
 
     $("#usuarios").on("click", ".js-delete", function () {
         var button = $(this);
 
-        bootbox.confirm("Tem certeza que quer deletar este usuário da Newsletter?"), function (result) {
+        bootbox.confirm("Tem certeza que quer deletar este usuário da Newsletter?", function (result) {
             if (result) {
                 $.ajax({
-                    url: "/api/UsuarioNewsletter",
+                    url: "/api/UsuarioNewsletter/" + button.attr("usuario-id"),
                     method: "DELETE",
                     success: function () {
                         table.row(button.parents("tr")).remove().draw();
                     }
                 });
             }
-        }
+        });
     });
+});
 </script>
 }
