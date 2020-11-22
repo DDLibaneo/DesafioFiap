@@ -202,6 +202,10 @@
     <Compile Include="Migrations\202011202329275_UsuarioNewsletter.designer.cs">
       <DependentUpon>202011202329275_UsuarioNewsletter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011221655589_SeedAdminUser.cs" />
+    <Compile Include="Migrations\202011221655589_SeedAdminUser.designer.cs">
+      <DependentUpon>202011221655589_SeedAdminUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -473,6 +477,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202011202329275_UsuarioNewsletter.resx">
       <DependentUpon>202011202329275_UsuarioNewsletter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011221655589_SeedAdminUser.resx">
+      <DependentUpon>202011221655589_SeedAdminUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
