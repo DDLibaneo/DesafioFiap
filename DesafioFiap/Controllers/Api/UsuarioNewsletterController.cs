@@ -76,11 +76,19 @@ namespace DesafioFiap.Controllers.Api
             return Ok();
         }
 
-        //
+        // DELETE /api/UsuarioNewsletter/1
         [HttpDelete]
         public IHttpActionResult DeleteUsuario(int id)
         {
-            throw new NotImplementedException();
+            var usuario = _context.UsuariosNewsletter.SingleOrDefault(u => u.Id == id);
+
+            if (usuario == null)
+                return NotFound();
+
+            _context.UsuariosNewsletter.Remove(usuario);
+            _context.SaveChanges();
+
+            return Ok();
         }
     }
 }
