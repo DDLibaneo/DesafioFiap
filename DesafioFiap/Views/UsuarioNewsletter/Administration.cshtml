@@ -45,5 +45,21 @@
             ]
         });
     });
+
+    $("#usuarios").on("click", ".js-delete", function () {
+        var button = $(this);
+
+        bootbox.confirm("Tem certeza que quer deletar este usuário da Newsletter?"), function (result) {
+            if (result) {
+                $.ajax({
+                    url: "/api/UsuarioNewsletter",
+                    method: "DELETE",
+                    success: function () {
+                        table.row(button.parents("tr")).remove().draw();
+                    }
+                });
+            }
+        }
+    });
 </script>
 }
